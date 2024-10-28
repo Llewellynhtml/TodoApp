@@ -1,177 +1,127 @@
 .login {
-  max-width: 500px;
-  height: auto; 
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  background-color: #171717;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: 3em auto;
+  padding: 2em;
+  background: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: #ecf0f1;
+  font-family: Arial, sans-serif;
 }
 
 .login h1 {
-  font-size: 2.5em; 
-  font-weight: 600;
-  letter-spacing: -1px;
-  color: #00bfff;
+  font-size: 2em;
+  font-weight: bold;
+  color: #f1c40f;
   text-align: center;
-}
-
-.login h1::before,
-.login h1::after {
-  content: "";
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background-color: #00bfff;
-  margin-left: 0;
-}
-
-.login h1::before {
-  left: 0px;
-}
-
-.login h1::after {
-  left: 0px;
-  width: 18px;
-  height: 18px;
-  animation: pulse 2s linear infinite;
+  margin-bottom: 1em;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 2em;
-  background-color: #171717;
-  border-radius: 25px;
-  transition: 0.4s ease-in-out;
+  gap: 1em;
 }
-
-.form:hover {
-  transform: scale(1.05);
-  border: 1px solid black;
-}
-
 
 .field {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  position: relative;
 }
 
 .input {
-  background-color: #333;
-  color: #fff;
-  width: 100%;
-  padding: 15px 10px 5px 10px;
+  background: #34495e;
+  color: #ecf0f1;
+  padding: 12px;
+  border: 1px solid #7f8c8d;
+  border-radius: 6px;
   outline: none;
-  border: 1px solid rgba(105, 105, 105, 0.397);
-  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #f1c40f;
 }
 
 .input + span {
-  color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  left: 10px;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
   font-size: 0.9em;
-  cursor: text;
+  color: #bdc3c7;
+  pointer-events: none;
   transition: 0.3s ease;
 }
 
-.input:placeholder-shown + span {
-  bottom: 10px;
-  font-size: 0.9em;
-}
-
 .input:focus + span,
-.input:valid + span {
-  
-  font-size: 0.8em;
-  font-weight: 600;
+.input:not(:placeholder-shown) + span {
+  top: -10px;
+  font-size: 0.75em;
+  color: #f1c40f;
+  background: #2c3e50;
+  padding: 0 4px;
+  border-radius: 4px;
 }
 
 .submit {
   width: 100%;
   padding: 10px;
+  background-color: #e67e22;
+  color: #ecf0f1;
   border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #00bfff;
+  border-radius: 6px;
+  font-size: 1em;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s;
 }
 
 .submit:hover {
-  background-color: #00bfff96;
-}
-
-.sign-up,.button2 {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.3em 0;
-  gap: 5px;
-  border-radius: 10px;
-  transition: background-color 0.3s;
+  background-color: #d35400;
 }
 
 .error-message {
-  color: red;
-  margin-top: 10px;
+  color: #e74c3c;
+  font-size: 0.9em;
   text-align: center;
+  margin-top: 0.5em;
 }
-.message, 
-.signin {
-  
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
+
+.success {
+  color: #2ecc71;
+  font-size: 0.9em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.message {
+  font-size: 0.85em;
+  color: #95a5a6;
+  text-align: center;
 }
 
 .sign-up {
   text-align: center;
+  font-size: 0.9em;
 }
 
 .sign-up a {
-  color: #00bfff;
+  color: #f1c40f;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .sign-up a:hover {
+  color: #e67e22;
   text-decoration: underline;
-  color: royalblue;
-}
-
-@keyframes pulse {
-  from {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1.8);
-    opacity: 0;
-  }
 }
 
 @media (max-width: 600px) {
   .login h1 {
-    font-size: 1.8em; 
+    font-size: 1.6em;
   }
 
-  .login {
-    padding: 15px;
+  .input, .submit {
+    padding: 10px;
   }
-
-  .input {
-    padding: 10px; 
-  }
-
-  .submit {
-    padding: 8px;
-    font-size: 14px;
-  }}
+}
